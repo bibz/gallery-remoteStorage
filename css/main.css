@@ -1,0 +1,431 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Original author: Jonathan Verrecchia
+     http://verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL: Dark Theme
+   =================== */
+
+.header-container {
+    border-bottom: 5px solid #999;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #666;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav,
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 20px 0 15px /* 20px - 5px for pictures img margin */;
+    text-align: center;
+}
+
+.main h1 {
+    margin: 0 5px 15px /* 20px - 5px for pictures img margin */ 5px;
+}
+
+.main .album {
+    float: left;
+    margin: 10px;
+    text-align: center;
+}
+
+.main .album a {
+    color: #222;
+    background: #fff;
+    text-decoration: none;
+
+    display: block;
+    border: thin solid #222;
+}
+
+.main .album .cover {
+    overflow: hidden;
+    margin: 15px;
+    max-width: 200px;
+    max-height: 200px;
+}
+.main .album h3 {
+    margin: 0 15px;
+}
+
+.main aside {
+    color: white;
+    padding: 1em;
+    margin: 0 5px 15px /* 20px - 5px for pictures img margin */ 5px;
+}
+.main aside h3 {
+    margin: 0 0 0.5em;
+}
+.main aside p {
+    margin: 0;
+}
+
+.main .pictures .picture {
+    float: left;
+    margin: 5px;
+    text-align: center;
+    overflow: auto;
+}
+.main .pictures .picture img {
+    max-height: 200px;
+}
+
+.footer-container footer {
+    color: white;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding: 10px 0;
+}
+
+.footer-container footer a {
+    color: #ccc;
+}
+.footer-container footer a:visited {
+    text-decoration: none;
+}
+.footer-container footer a:hover {
+    color: #8ac;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ============
+    MEDIUM: Main
+   ============ */
+
+    .main {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+/* ====================
+    LARGE: CSS3 Effects
+   ==================== */
+
+    .header-container,
+    .main aside {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;
+    }
+    .footer-container {
+        -webkit-box-shadow: 0 -5px 10px #aaa;
+           -moz-box-shadow: 0 -5px 10px #aaa;
+                box-shadow: 0 -5px 10px #aaa;
+    }
+
+    .main .album {
+        border: thin solid #555;
+        z-index: 1;
+
+        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.5);
+           -moz-box-shadow: 0 5px 10px rgba(0,0,0,.5);
+                box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    }
+
+    .main .album a {
+        z-index: 10;
+
+        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.5);
+           -moz-box-shadow: 0 5px 10px rgba(0,0,0,.5);
+                box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        -webkit-transform: rotate(5deg);
+           -moz-transform: rotate(5deg);
+            -ms-transform: rotate(5deg);
+             -o-transform: rotate(5deg);
+                transform: rotate(5deg);
+    }
+    .main .album a:hover {
+        -webkit-box-shadow: 0 5px 15px #8ac;
+           -moz-box-shadow: 0 5px 15px #8ac;
+                box-shadow: 0 5px 15px #8ac;
+    }
+    .main .album:nth-child(2n) a {
+        -webkit-transform: rotate(-2deg);
+           -moz-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+             -o-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+    }
+    .main .album:nth-child(3n) a {
+        -webkit-transform: rotate(4deg);
+           -moz-transform: rotate(4deg);
+            -ms-transform: rotate(4deg);
+             -o-transform: rotate(4deg);
+                transform: rotate(4deg);
+    }
+    .main .album:nth-child(4n) a {
+        -webkit-transform: rotate(-6deg);
+           -moz-transform: rotate(-6deg);
+            -ms-transform: rotate(-6deg);
+             -o-transform: rotate(-6deg);
+                transform: rotate(-6deg);
+    }
+
+    .main .pictures .picture {
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
+           -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
+                box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+    .main .pictures .picture:hover {
+        -webkit-box-shadow: 0 0 15px #8ac;
+           -moz-box-shadow: 0 0 15px #8ac;
+                box-shadow: 0 0 15px #8ac;
+    }
+
+/* ============
+    LARGE: Main
+   ============ */
+
+    .main aside {
+        float: right;
+        width: 28%;
+        margin-left: 1em;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===========
+    MAX: Main
+   =========== */
+
+    .main aside {
+        width: 287.28px; /* 28% of 1026px (1140px - 10% for margins) */
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
