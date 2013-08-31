@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Borjan `bibz` Tchakaloff -- author -- @bibzor
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    remoteStorage, Modernizr
