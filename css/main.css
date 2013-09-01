@@ -119,34 +119,13 @@ nav a:hover {
 }
 
 .main .album {
-    float: left;
-    margin: 10px;
-    text-align: center;
+    margin: 0 5px 15px /* 20px - 5px for pictures img margin */ 5px;
 }
 
 .main .album a {
     color: #222;
     background: #fff;
     text-decoration: none;
-
-    display: block;
-    border: thin solid #222;
-}
-
-.main .album h3 {
-    margin: 0 15px;
-}
-
-.main aside {
-    color: white;
-    padding: 1em;
-    margin: 0 5px 15px /* 20px - 5px for pictures img margin */ 5px;
-}
-.main aside h3 {
-    margin: 0 0 0.5em;
-}
-.main aside p {
-    margin: 0;
 }
 
 .main .picture {
@@ -198,8 +177,7 @@ nav a:hover {
     LARGE: CSS3 Effects
    ==================== */
 
-    .header-container,
-    .main aside {
+    .header-container {
         -webkit-box-shadow: 0 5px 10px #aaa;
            -moz-box-shadow: 0 5px 10px #aaa;
                 box-shadow: 0 5px 10px #aaa;
@@ -219,27 +197,6 @@ nav a:hover {
         -webkit-box-shadow: 0 0 15px #8ac;
            -moz-box-shadow: 0 0 15px #8ac;
                 box-shadow: 0 0 15px #8ac;
-    }
-
-/* ============
-    LARGE: Main
-   ============ */
-
-    .main aside {
-        float: right;
-        width: 28%;
-        margin-left: 1em;
-    }
-}
-
-@media only screen and (min-width: 1140px) {
-
-/* ===========
-    MAX: Main
-   =========== */
-
-    .main aside {
-        width: 287.28px; /* 28% of 1026px (1140px - 10% for margins) */
     }
 }
 
