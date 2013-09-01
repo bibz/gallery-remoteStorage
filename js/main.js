@@ -223,6 +223,10 @@
             };
             albums.push(album);
         });
+
+        // TODO call only once (for both private and public)
+        // display the albums
+        displayAlbums();
     }
 
     /**
@@ -255,13 +259,10 @@
         remoteStorage.on('ready', function(){
             // TODO loading...
 
-            remoteStorage.pictures.listPrivateAlbums().then(initAlbums);
+            //remoteStorage.pictures.listPrivateAlbums().then(initAlbums);
             remoteStorage.pictures.listPublicAlbums().then(function(albums){
                 initAlbums(albums, 'public');
             });
-
-            // display the albums
-            displayAlbums();
         });
     }
 
