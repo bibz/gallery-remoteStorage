@@ -119,13 +119,6 @@
         } else
             removeChildrenOf(albumElement);
 
-
-        var albumCoverImageElement = document.createElement('img');
-        albumCoverImageElement.src = 'img/missing-cover.png'; // TODO cover in module
-        var albumCoverElement = document.createElement('div');
-        albumCoverElement.classList.add('cover');
-        albumCoverElement.appendChild(albumCoverImageElement);
-
         var albumTitleElement = document.createElement('h3');
         albumTitleElement.innerHTML = album.name;
 
@@ -133,7 +126,6 @@
         albumLinkElement.href = '#!/'+album.name;
         albumLinkElement.album = album;
         albumLinkElement.onclick = function(){displayAlbum(this.album);};
-        albumLinkElement.appendChild(albumCoverElement);
         albumLinkElement.appendChild(albumTitleElement);
 
         albumElement.appendChild(albumLinkElement);
@@ -153,22 +145,6 @@
         // retrieve album
         album = remoteStorage.pictures.openPublicAlbum(album.name);
         updateNavigation(album);
-
-        // ! COMMENTED OUT ! //
-        //   Reasons are 1) the description is not available in the pictures
-        //    module yet and 2) a fix has to be found w.r.t. the aside block
-        //    size and the pictures size (e.g. different line heights).
-        // set the album title and description
-        //~ var albumTitleElement = document.createElement('h3');
-        //~ albumTitleElement.innerHTML = album.name;
-        //~ var albumDescElement = document.createElement('p');
-        //~ albumDescElement.innerHTML = '<em>No description in the current <em>pictures</em> module.</em>';
-
-        //~ var albumAsideElement = document.createElement('aside');
-        //~ albumAsideElement.appendChild(albumTitleElement);
-        //~ albumAsideElement.appendChild(albumDescElement);
-
-        //~ albumContainerElement.appendChild(albumAsideElement);
 
         var albumPicturesElement = document.createElement('div');
         albumPicturesElement.classList.add('pictures');
@@ -193,8 +169,6 @@
         pictureImageElement.src = album.getPictureURL(pictureName);
         pictureImageElement.title = pictureName;
 
-        // TODO loading thumb...
-
         var pictureLinkElement = document.createElement('a');
         pictureLinkElement.href = album.getPictureURL(pictureName);
         pictureLinkElement.appendChild(pictureImageElement);
@@ -202,7 +176,6 @@
         var pictureElement = document.createElement('div');
         pictureElement.classList.add('picture');
         pictureElement.appendChild(pictureLinkElement);
-        // TODO picture-h picture-s picture-v, resizing the img frame
 
         albumContainerElement.getElementsByClassName('pictures')[0].appendChild(pictureElement);
     }

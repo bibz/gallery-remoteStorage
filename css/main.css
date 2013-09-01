@@ -133,12 +133,6 @@ nav a:hover {
     border: thin solid #222;
 }
 
-.main .album .cover {
-    overflow: hidden;
-    margin: 15px;
-    max-width: 200px;
-    max-height: 200px;
-}
 .main .album h3 {
     margin: 0 15px;
 }
@@ -214,54 +208,6 @@ nav a:hover {
         -webkit-box-shadow: 0 -5px 10px #aaa;
            -moz-box-shadow: 0 -5px 10px #aaa;
                 box-shadow: 0 -5px 10px #aaa;
-    }
-
-    .main .album {
-        border: thin solid #555;
-        z-index: 1;
-
-        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.5);
-           -moz-box-shadow: 0 5px 10px rgba(0,0,0,.5);
-                box-shadow: 0 5px 10px rgba(0,0,0,.5);
-    }
-
-    .main .album a {
-        z-index: 10;
-
-        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.5);
-           -moz-box-shadow: 0 5px 10px rgba(0,0,0,.5);
-                box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        -webkit-transform: rotate(5deg);
-           -moz-transform: rotate(5deg);
-            -ms-transform: rotate(5deg);
-             -o-transform: rotate(5deg);
-                transform: rotate(5deg);
-    }
-    .main .album a:hover {
-        -webkit-box-shadow: 0 5px 15px #8ac;
-           -moz-box-shadow: 0 5px 15px #8ac;
-                box-shadow: 0 5px 15px #8ac;
-    }
-    .main .album:nth-child(2n) a {
-        -webkit-transform: rotate(-2deg);
-           -moz-transform: rotate(-2deg);
-            -ms-transform: rotate(-2deg);
-             -o-transform: rotate(-2deg);
-                transform: rotate(-2deg);
-    }
-    .main .album:nth-child(3n) a {
-        -webkit-transform: rotate(4deg);
-           -moz-transform: rotate(4deg);
-            -ms-transform: rotate(4deg);
-             -o-transform: rotate(4deg);
-                transform: rotate(4deg);
-    }
-    .main .album:nth-child(4n) a {
-        -webkit-transform: rotate(-6deg);
-           -moz-transform: rotate(-6deg);
-            -ms-transform: rotate(-6deg);
-             -o-transform: rotate(-6deg);
-                transform: rotate(-6deg);
     }
 
     .main .pictures .picture {
