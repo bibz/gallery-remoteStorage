@@ -102,7 +102,7 @@
 
         if (album) {
             var navAlbumLink = document.createElement('a');
-            navAlbumLink.href = '#!/' + encodeURIComponent(album.name);
+            navAlbumLink.href = '#!/' + encodeURIComponent(album.name) + '/';
             navAlbumLink.innerHTML = album.name;
 
             var navExtraElement = document.createElement('span');
@@ -155,7 +155,7 @@
         albumTitleElement.innerHTML = album.name;
 
         var albumLinkElement = document.createElement('a');
-        albumLinkElement.href = '#!/'+album.name;
+        albumLinkElement.href = '#!/' + encodeURIComponent(album.name) + '/';
         albumLinkElement.album = album;
         albumLinkElement.onclick = function(){displayAlbum(this.album);};
         albumLinkElement.appendChild(albumTitleElement);
