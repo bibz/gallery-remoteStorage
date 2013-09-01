@@ -15,7 +15,7 @@
     }
 
     /**
-     * Remove every children of an (DOM) element.
+     * Remove every children of a DOM element.
      */
     function removeChildrenOf(domElement) {
         while (domElement.firstChild)
@@ -24,7 +24,7 @@
 
     /**
      * Show an element.
-     * This function rely on the .hidden class defined in the stylesheets.
+     * This function relies on the .hidden class defined in the stylesheets.
      */
     function showElement(domElement, show=true) {
         if (show)
@@ -35,6 +35,7 @@
 
     /**
      * Hide an element.
+     * This function relies on the .hidden class defined in the stylesheets.
      */
     function hideElement(domElement) {
         showElement(domElement, false);
@@ -66,8 +67,8 @@
 
     /**
      * Update the navigation bar.
-     * The navigation bar displays a link to the albums list and also displays
-     *  the current album name.
+     * The navigation bar contains a link to the albums list and another one to
+     *  the current album name (if any).
      */
     function updateNavigation(album=null) {
         // remove any extra link
