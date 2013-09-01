@@ -207,9 +207,9 @@
     }
 
     /**
-     * Initialize the albums retrieval.
+     * Initialize the albums.
      */
-    function initAlbums(albumNames) {
+    function initAlbums(albumNames, scope='private') {
         albumNames.forEach(function(name){
             var album = {};
             album.name = name;
@@ -222,9 +222,6 @@
             };
             albums.push(album);
         });
-
-        // display the albums
-        displayAlbums();
     }
 
     /**
@@ -259,8 +256,13 @@
             // TODO loading...
             hideElement(overlayDisconnectedElement);
 
-            //remoteStorage.pictures.listPrivateAlbums().then(displayAlbums);
-            remoteStorage.pictures.listPublicAlbums().then(initAlbums);
+            remoteStorage.pictures.listPrivateAlbums().then(initAlbums);
+            remoteStorage.pictures.listPublicAlbums().then(function(albums){
+                initAlbums(albums, 'public');
+            });
+
+            // display the albums
+            displayAlbums();
         });
     }
 
