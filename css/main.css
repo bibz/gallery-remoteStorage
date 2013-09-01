@@ -149,13 +149,13 @@ nav a:hover {
     margin: 0;
 }
 
-.main .pictures .picture {
+.main .picture {
     float: left;
     margin: 5px;
     text-align: center;
     overflow: auto;
 }
-.main .pictures .picture img {
+.main .picture img {
     max-height: 200px;
 }
 
@@ -210,12 +210,12 @@ nav a:hover {
                 box-shadow: 0 -5px 10px #aaa;
     }
 
-    .main .pictures .picture {
+    .main .picture {
         -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
            -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
                 box-shadow: 0 0 10px rgba(0,0,0,.5);
     }
-    .main .pictures .picture:hover {
+    .main .picture:hover {
         -webkit-box-shadow: 0 0 15px #8ac;
            -moz-box-shadow: 0 0 15px #8ac;
                 box-shadow: 0 0 15px #8ac;
