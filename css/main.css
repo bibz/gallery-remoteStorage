@@ -119,49 +119,22 @@ nav a:hover {
 }
 
 .main .album {
-    float: left;
-    margin: 10px;
-    text-align: center;
+    margin: 0 5px 15px /* 20px - 5px for pictures img margin */ 5px;
 }
 
 .main .album a {
     color: #222;
     background: #fff;
     text-decoration: none;
-
-    display: block;
-    border: thin solid #222;
 }
 
-.main .album .cover {
-    overflow: hidden;
-    margin: 15px;
-    max-width: 200px;
-    max-height: 200px;
-}
-.main .album h3 {
-    margin: 0 15px;
-}
-
-.main aside {
-    color: white;
-    padding: 1em;
-    margin: 0 5px 15px /* 20px - 5px for pictures img margin */ 5px;
-}
-.main aside h3 {
-    margin: 0 0 0.5em;
-}
-.main aside p {
-    margin: 0;
-}
-
-.main .pictures .picture {
+.main .picture {
     float: left;
     margin: 5px;
     text-align: center;
     overflow: auto;
 }
-.main .pictures .picture img {
+.main .picture img {
     max-height: 200px;
 }
 
@@ -204,8 +177,7 @@ nav a:hover {
     LARGE: CSS3 Effects
    ==================== */
 
-    .header-container,
-    .main aside {
+    .header-container {
         -webkit-box-shadow: 0 5px 10px #aaa;
            -moz-box-shadow: 0 5px 10px #aaa;
                 box-shadow: 0 5px 10px #aaa;
@@ -216,84 +188,15 @@ nav a:hover {
                 box-shadow: 0 -5px 10px #aaa;
     }
 
-    .main .album {
-        border: thin solid #555;
-        z-index: 1;
-
-        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.5);
-           -moz-box-shadow: 0 5px 10px rgba(0,0,0,.5);
-                box-shadow: 0 5px 10px rgba(0,0,0,.5);
-    }
-
-    .main .album a {
-        z-index: 10;
-
-        -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.5);
-           -moz-box-shadow: 0 5px 10px rgba(0,0,0,.5);
-                box-shadow: 0 5px 10px rgba(0,0,0,.5);
-        -webkit-transform: rotate(5deg);
-           -moz-transform: rotate(5deg);
-            -ms-transform: rotate(5deg);
-             -o-transform: rotate(5deg);
-                transform: rotate(5deg);
-    }
-    .main .album a:hover {
-        -webkit-box-shadow: 0 5px 15px #8ac;
-           -moz-box-shadow: 0 5px 15px #8ac;
-                box-shadow: 0 5px 15px #8ac;
-    }
-    .main .album:nth-child(2n) a {
-        -webkit-transform: rotate(-2deg);
-           -moz-transform: rotate(-2deg);
-            -ms-transform: rotate(-2deg);
-             -o-transform: rotate(-2deg);
-                transform: rotate(-2deg);
-    }
-    .main .album:nth-child(3n) a {
-        -webkit-transform: rotate(4deg);
-           -moz-transform: rotate(4deg);
-            -ms-transform: rotate(4deg);
-             -o-transform: rotate(4deg);
-                transform: rotate(4deg);
-    }
-    .main .album:nth-child(4n) a {
-        -webkit-transform: rotate(-6deg);
-           -moz-transform: rotate(-6deg);
-            -ms-transform: rotate(-6deg);
-             -o-transform: rotate(-6deg);
-                transform: rotate(-6deg);
-    }
-
-    .main .pictures .picture {
+    .main .picture {
         -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
            -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
                 box-shadow: 0 0 10px rgba(0,0,0,.5);
     }
-    .main .pictures .picture:hover {
+    .main .picture:hover {
         -webkit-box-shadow: 0 0 15px #8ac;
            -moz-box-shadow: 0 0 15px #8ac;
                 box-shadow: 0 0 15px #8ac;
-    }
-
-/* ============
-    LARGE: Main
-   ============ */
-
-    .main aside {
-        float: right;
-        width: 28%;
-        margin-left: 1em;
-    }
-}
-
-@media only screen and (min-width: 1140px) {
-
-/* ===========
-    MAX: Main
-   =========== */
-
-    .main aside {
-        width: 287.28px; /* 28% of 1026px (1140px - 10% for margins) */
     }
 }
 
