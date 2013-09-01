@@ -142,8 +142,10 @@
         // do not clear the albums container but only hide it
         hideElement(albumsContainerElement);
 
-        // retrieve album
-        album = remoteStorage.pictures.openPublicAlbum(album.name);
+        // retrieve the album
+        album = album.retrieve();
+
+        // update the navigation bar
         updateNavigation(album);
 
         var albumPicturesElement = document.createElement('div');
@@ -211,6 +213,13 @@
         albumNames.forEach(function(name){
             var album = {};
             album.name = name;
+            album.scope = scope;
+            album.retrieve = function(){
+                if (scope === 'private')
+                    return remoteStorage.pictures.openPrivateAlbum(album.name);
+                else
+                    return remoteStorage.pictures.openPublicAlbum(album.name);
+            };
             albums.push(album);
         });
 
