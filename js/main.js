@@ -46,23 +46,9 @@
     _Album = function(name, scope) {
         this.name = name;
         this.scope = scope;
-
-        var album = {};
-            album.name = name;
-            album.scope = scope;
-            album.retrieve = function(){
-                if (scope === 'private')
-                    return remoteStorage.pictures.openPrivateAlbum(album.name);
-                else
-                    return remoteStorage.pictures.openPublicAlbum(album.name);
-            };
-            albums.push(album);
     };
     // public interface
     _Album.prototype = {
-        name: null,
-        scope: null,
-
         /**
          * Effectively retrieve the remote album.
          */
