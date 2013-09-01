@@ -26,11 +26,8 @@
      * Show an element.
      * This function relies on the .hidden class defined in the stylesheets.
      */
-    function showElement(domElement, show=true) {
-        if (show)
-            domElement.classList.remove('hidden');
-        else
-            domElement.classList.add('hidden');
+    function showElement(domElement) {
+        domElement.classList.remove('hidden');
     }
 
     /**
@@ -38,7 +35,7 @@
      * This function relies on the .hidden class defined in the stylesheets.
      */
     function hideElement(domElement) {
-        showElement(domElement, false);
+        domElement.classList.add('hidden');
     }
 
     /*
@@ -112,7 +109,7 @@
      * The navigation bar contains a link to the albums list and another one to
      *  the current album name (if any).
      */
-    function updateNavigation(album=null) {
+    function updateNavigation(album) {
         // remove any extra link
         if (navRootElement.nextSibling)
             navRootElement.parentElement.removeChild(navRootElement.nextSibling);
@@ -138,8 +135,8 @@
         // clear the container
         removeChildrenOf(containerElement);
 
-        // show the empty albums overlay if needed
-        showElement(overlayAlbumsEmptyElement, !albums||albums.length==0);
+        // show the empty albums overlay
+        showElement(overlayAlbumsEmptyElement);
         hideElement(overlayAlbumEmptyElement);
 
         // ensure that the app is shown
@@ -147,6 +144,7 @@
         hideElement(overlayDisconnectedElement);
 
         if (!albums||albums.length==0) return;
+        hideElement(overlayAlbumsEmptyElement);
 
         // populate the albums
         albums.forEach(populateAlbumsWith);
@@ -187,7 +185,7 @@
         // clear the container
         removeChildrenOf(containerElement);
 
-        // show the empty album overlay by default
+        // show the empty album overlay
         showElement(overlayAlbumEmptyElement);
         hideElement(overlayAlbumsEmptyElement);
 
@@ -245,7 +243,7 @@
     /**
      * Initialize the albums.
      */
-    function initAlbums(albumNames, scope='private') {
+    function initAlbums(albumNames, scope) {
         albumNames.forEach(function(name){
             albums.push(new _Album(name, scope));
         });
