@@ -148,7 +148,6 @@
         // show the empty album overlay by default
         showElement(overlayAlbumEmptyElement);
         hideElement(overlayAlbumsEmptyElement);
-        showElement(containerElement);
 
         // ensure that app is shown
         showElement(appContainerElement);
@@ -160,18 +159,12 @@
         // update the navigation bar
         updateNavigation(album);
 
-        // populate the albums
-
-        var albumPicturesElement = document.createElement('div');
-        albumPicturesElement.classList.add('pictures');
-        containerElement.appendChild(albumPicturesElement);
-
         // browse the pictures
         album.list().then(function(pictures){
             hideElement(overlayAlbumEmptyElement);
 
             pictures.forEach(function(pictureName){
-                populateAlbumWith(pictureName, album, albumPicturesElement);
+                populateAlbumWith(pictureName, album);
             });
         });
     }
@@ -179,7 +172,7 @@
     /**
      * Populate the album with a picture.
      */
-    function populateAlbumWith(pictureName, album, pictureContainer) {
+    function populateAlbumWith(pictureName, album) {
         var pictureImageElement = document.createElement('img');
         pictureImageElement.src = album.getPictureURL(pictureName);
         pictureImageElement.title = pictureName;
@@ -192,7 +185,7 @@
         pictureElement.classList.add('picture');
         pictureElement.appendChild(pictureLinkElement);
 
-        pictureContainer.appendChild(pictureElement);
+        containerElement.appendChild(pictureElement);
     }
 
     /**
