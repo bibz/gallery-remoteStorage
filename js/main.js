@@ -99,9 +99,8 @@
         // show the empty albums overlay if needed
         showElement(overlayAlbumsEmptyElement, !albums||albums.length==0);
         hideElement(overlayAlbumEmptyElement);
-        showElement(containerElement);
 
-        // ensure that app is shown
+        // ensure that the app is shown
         showElement(appContainerElement);
         hideElement(overlayDisconnectedElement);
 
