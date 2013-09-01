@@ -52,8 +52,8 @@
     var overlayDisconnectedElement;
     var overlayAlbumsEmptyElement;
     var overlayAlbumEmptyElement;
-    var albumsContainerElement;
-    var albumContainerElement;
+    var appContainerElement;
+    var containerElement;
     var navRootElement;
 
     var albums = [];
@@ -93,14 +93,21 @@
      * If there are no albums, show the empty overlay.
      */
     function displayAlbums() {
-        showElement(overlayAlbumsEmptyElement, !albums||albums.length==0);
-        showElement(albumsContainerElement);
+        // clear the container
+        removeChildrenOf(containerElement);
 
-        hideElement(albumContainerElement);
-        clearAlbum();
+        // show the empty albums overlay if needed
+        showElement(overlayAlbumsEmptyElement, !albums||albums.length==0);
+        hideElement(overlayAlbumEmptyElement);
+        showElement(containerElement);
+
+        // ensure that app is shown
+        showElement(appContainerElement);
+        hideElement(overlayDisconnectedElement);
 
         if (!albums||albums.length==0) return;
 
+        // populate the albums
         albums.forEach(populateAlbumsWith);
     }
 
@@ -115,7 +122,7 @@
             albumElement = document.createElement('div');
             albumElement.id = domAlbum;
             albumElement.classList.add('album');
-            albumsContainerElement.appendChild(albumElement);
+            containerElement.appendChild(albumElement);
         } else
             removeChildrenOf(albumElement);
 
@@ -136,11 +143,17 @@
      * If the album is empty, show the empty-album overlay.
      */
     function displayAlbum(album) {
-        showElement(overlayAlbumEmptyElement);
-        showElement(albumContainerElement);
+        // clear the container
+        removeChildrenOf(containerElement);
 
-        // do not clear the albums container but only hide it
-        hideElement(albumsContainerElement);
+        // show the empty album overlay by default
+        showElement(overlayAlbumEmptyElement);
+        hideElement(overlayAlbumsEmptyElement);
+        showElement(containerElement);
+
+        // ensure that app is shown
+        showElement(appContainerElement);
+        hideElement(overlayDisconnectedElement);
 
         // retrieve the album
         album = album.retrieve();
@@ -148,10 +161,11 @@
         // update the navigation bar
         updateNavigation(album);
 
+        // populate the albums
+
         var albumPicturesElement = document.createElement('div');
         albumPicturesElement.classList.add('pictures');
-
-        albumContainerElement.appendChild(albumPicturesElement);
+        containerElement.appendChild(albumPicturesElement);
 
         // browse the pictures
         album.list().then(function(pictures){
@@ -183,24 +197,12 @@
     }
 
     /**
-     * Clear the displayed album container.
-     * DOM objects are removed.
-     */
-    function clearAlbum() {
-        // destroy DOM elements
-        removeChildrenOf(albumContainerElement);
-    }
-
-    /**
-     * Clear all (displayed) albums.
-     * First clear the album displayed (if one), then the albums. Both DOM and
-     *  javascript objects are destroyed.
+     * Clear all albums.
+     * First clear the DOM elements and then the javascript objects.
      */
     function clearAllAlbums() {
-        clearAlbum();
-
         // destroy DOM elements
-        removeChildrenOf(albumsContainerElement);
+        removeChildrenOf(containerElement);
 
         // destroy javascript elements
         albums = [];
@@ -232,8 +234,8 @@
         overlayDisconnectedElement = document.getElementById('overlay-disconnected');
         overlayAlbumsEmptyElement = document.getElementById('overlay-albums-empty');
         overlayAlbumEmptyElement = document.getElementById('overlay-album-empty');
-        albumsContainerElement = document.getElementById('albums-container');
-        albumContainerElement = document.getElementById('album-container');
+        appContainerElement = document.getElementById('app-container');
+        containerElement = document.getElementById('pictures-container');
 
         /* navigation */
         navRootElement = document.getElementById('nav-root');
@@ -246,15 +248,13 @@
         remoteStorage.on('features-loaded', function(){
             remoteStorage.on('disconnect', function() {
                 showElement(overlayDisconnectedElement);
-                hideElement(albumsContainerElement);
-                hideElement(albumContainerElement);
+                hideElement(containerElement);
 
                 clearAllAlbums();
             });
         });
         remoteStorage.on('ready', function(){
             // TODO loading...
-            hideElement(overlayDisconnectedElement);
 
             remoteStorage.pictures.listPrivateAlbums().then(initAlbums);
             remoteStorage.pictures.listPublicAlbums().then(function(albums){
