@@ -4,16 +4,6 @@
      * HELPERS FUNCTIONS
      */
 
-    function dump(obj) {
-        var out = '';
-        for (var i in obj) {
-            out += i + ": " + obj[i] + "\n";
-        }
-        var pre = document.createElement('pre');
-        pre.innerHTML = out;
-        document.body.appendChild(pre)
-    }
-
     /**
      * Remove every children of a DOM element.
      */
@@ -69,10 +59,6 @@
     /*
      * GLOBAL VARIABLES
      */
-
-    var albumPrefix = 'album-';
-    var picturePrefix = 'picture-';
-    var thumbsSuffix = '-thumbs-h200';
 
     var overlayDisconnectedElement;
     var overlayAlbumsEmptyElement;
