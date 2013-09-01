@@ -111,6 +111,10 @@
         if (!albums||albums.length==0) return;
         hideElement(overlayAlbumsEmptyElement);
 
+        var albumsTitle = document.createElement('h1');
+        albumsTitle.innerHTML = 'Albums';
+        containerElement.appendChild(albumsTitle);
+
         // populate the albums
         albums.forEach(populateAlbumsWith);
     }
