@@ -69,13 +69,6 @@
 
     var albums = [];
 
-    function domifyAlbumName(albumName) {
-        return albumPrefix + encodeURIComponent(albumName);
-    }
-    function undomifyAlbumName(prefixedAlbumName) {
-        return decodeURIComponent(prefixedAlbumName.substr(0, albumPrefix.length));
-    }
-
     /**
      * Update the navigation bar.
      * The navigation bar contains a link to the albums list and another one to
@@ -126,16 +119,9 @@
      * Populate the albums with an album.
      */
     function populateAlbumsWith(album) {
-        var domAlbum = domifyAlbumName(album.name);
-        var albumElement = document.getElementById(domAlbum);
-
-        if (!albumElement) {
-            albumElement = document.createElement('div');
-            albumElement.id = domAlbum;
-            albumElement.classList.add('album');
-            containerElement.appendChild(albumElement);
-        } else
-            removeChildrenOf(albumElement);
+        var albumElement = document.createElement('div');
+        albumElement.classList.add('album');
+        containerElement.appendChild(albumElement);
 
         var albumTitleElement = document.createElement('h3');
         albumTitleElement.innerHTML = album.name;
