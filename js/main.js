@@ -42,6 +42,48 @@
     }
 
     /*
+     * CLASSES
+     */
+
+    // contructor
+    _Album = function(name, scope) {
+        this.name = name;
+        this.scope = scope;
+
+        var album = {};
+            album.name = name;
+            album.scope = scope;
+            album.retrieve = function(){
+                if (scope === 'private')
+                    return remoteStorage.pictures.openPrivateAlbum(album.name);
+                else
+                    return remoteStorage.pictures.openPublicAlbum(album.name);
+            };
+            albums.push(album);
+    };
+    // public interface
+    _Album.prototype = {
+        name: null,
+        scope: null,
+
+        /**
+         * Effectively retrieve the remote album.
+         */
+        retrieve: function() {
+            var remoteAlbum;
+
+            if (this.scope === 'private')
+                remoteAlbum = remoteStorage.pictures.openPrivateAlbum(this.name);
+            else
+                remoteAlbum = remoteStorage.pictures.openPublicAlbum(this.name);
+
+            // merge this instance with the remote album
+            for (var key in remoteAlbum)
+                this[key] = remoteAlbum[key];
+        }
+    };
+
+    /*
      * GLOBAL VARIABLES
      */
 
@@ -154,7 +196,7 @@
         hideElement(overlayDisconnectedElement);
 
         // retrieve the album
-        album = album.retrieve();
+        album.retrieve();
 
         // update the navigation bar
         updateNavigation(album);
@@ -205,16 +247,7 @@
      */
     function initAlbums(albumNames, scope='private') {
         albumNames.forEach(function(name){
-            var album = {};
-            album.name = name;
-            album.scope = scope;
-            album.retrieve = function(){
-                if (scope === 'private')
-                    return remoteStorage.pictures.openPrivateAlbum(album.name);
-                else
-                    return remoteStorage.pictures.openPublicAlbum(album.name);
-            };
-            albums.push(album);
+            albums.push(new _Album(name, scope));
         });
 
         // TODO call only once (for both private and public)
