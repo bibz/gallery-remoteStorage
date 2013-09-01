@@ -158,7 +158,7 @@
             hideElement(overlayAlbumEmptyElement);
 
             pictures.forEach(function(pictureName){
-                populateAlbumWith(pictureName, album);
+                populateAlbumWith(pictureName, album, albumPicturesElement);
             });
         });
     }
@@ -166,7 +166,7 @@
     /**
      * Populate the album with a picture.
      */
-    function populateAlbumWith(pictureName, album) {
+    function populateAlbumWith(pictureName, album, pictureContainer) {
         var pictureImageElement = document.createElement('img');
         pictureImageElement.src = album.getPictureURL(pictureName);
         pictureImageElement.title = pictureName;
@@ -179,7 +179,7 @@
         pictureElement.classList.add('picture');
         pictureElement.appendChild(pictureLinkElement);
 
-        albumContainerElement.getElementsByClassName('pictures')[0].appendChild(pictureElement);
+        pictureContainer.appendChild(pictureElement);
     }
 
     /**
